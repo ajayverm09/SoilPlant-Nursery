@@ -562,7 +562,7 @@ const AboutUs = () => {
                 style={{ backgroundColor: customGreen }}
               ></div>
               <div className="flex flex-col md:flex-row gap-8 items-center relative z-10">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <div
                     className="p-6 rounded-full"
                     style={{
