@@ -124,7 +124,7 @@ const Navbar = () => {
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <ul className="flex flex-col space-y-4 font-semibold py-4">
+        <ul className="flex flex-col text-center space-y-4 font-semibold py-4">
           {menuItems.map((item) => (
             <li key={item.name}>
               <NavLink
@@ -143,7 +143,7 @@ const Navbar = () => {
           <li className="pt-2">
             <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
               <button
-                className="w-full bg-[#81BA00] text-white px-5 py-2 border border-[#81BA00] rounded-md font-semibold hover:bg-transparent hover:text-[#81BA00] transition-all duration-300"
+                className="md:w-full w-40 bg-[#81BA00] text-white px-5 py-2 border border-[#81BA00] rounded-md font-semibold hover:bg-transparent hover:text-[#81BA00] transition-all duration-300"
                 aria-label="Get in Touch"
               >
                 Get in Touch
