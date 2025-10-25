@@ -667,7 +667,7 @@ const AboutUs = () => {
 
                   <div className="flex gap-4">
                     <button
-                      className="md:px-6 md:py-3 rounded-lg font-medium text-white transition-all transform hover:scale-105 shadow-md"
+                      className="md:px-6 px-2 md:py-3 py-1 rounded-lg font-medium text-white transition-all transform hover:scale-105 shadow-md"
                       style={{ backgroundColor: customGreen }}
                       onMouseEnter={(e) =>
                         (e.target.style.backgroundColor = customGreenDark)
@@ -679,7 +679,7 @@ const AboutUs = () => {
                       Shop Now
                     </button>
                     <button
-                      className="md:px-6 md:py-3 rounded-lg font-medium transition-all transform hover:scale-105"
+                      className="md:px-6 px-2 md:py-3 py-1 rounded-lg font-medium transition-all transform hover:scale-105"
                       style={{
                         border: `2px solid ${customGreen}`,
                         color: customGreen,
@@ -759,7 +759,7 @@ const AboutUs = () => {
                     alt={member.name}
                     className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 <div className="p-6">
                   <h3 className="md:text-2xl text-xl font-semibold text-gray-800 mb-2">
