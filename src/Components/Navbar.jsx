@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 text-white px-4 md:px-8 py-4 shadow-lg  z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 text-white px-4 md:px-8 py-4 shadow-lg z-50 transition-all duration-300 ${
         isScrolled ? 'bg-[#222]' : 'bg-transparent'
       }`}
     >
@@ -88,35 +88,40 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Updated Hamburger */}
         <button
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
+          className={`md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-300 ${
+            isMenuOpen ? 'bg-[#81BA00] bg-opacity-20' : 'hover:bg-white hover:bg-opacity-10'
+          }`}
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
         >
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? 'opacity-0' : ''
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMenuOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
-          ></span>
+          <span className="sr-only">Menu</span>
+          <div className="relative w-6 h-5 flex flex-col justify-between">
+            <span
+              className={`absolute h-0.5 w-6 bg-white transition-all duration-300 ease-in-out transform ${
+                isMenuOpen ? 'rotate-45 top-2' : 'top-0'
+              }`}
+            ></span>
+            <span
+              className={`absolute h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${
+                isMenuOpen ? 'opacity-0' : 'top-2'
+              }`}
+            ></span>
+            <span
+              className={`absolute h-0.5 w-6 bg-white transition-all duration-300 ease-in-out transform ${
+                isMenuOpen ? '-rotate-45 top-2' : 'top-4'
+              }`}
+            ></span>
+          </div>
         </button>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-black overflow-hidden transition-all duration-300 ${
-          isMenuOpen ? 'max-h-96' : 'max-h-0'
+        className={`md:hidden bg-black overflow-hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <ul className="flex flex-col space-y-4 font-semibold py-4">
@@ -125,7 +130,7 @@ const Navbar = () => {
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  `block transition-colors duration-300 ${
+                  `block transition-colors duration-300 px-2 py-1 ${
                     isActive ? 'text-[#81BA00]' : 'hover:text-[#81BA00]'
                   }`
                 }
